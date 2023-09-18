@@ -1,0 +1,31 @@
+.menuContainer{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, black, gray);
+}
+
+.menuScreen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 500px;
+    min-height: 400px;
+    border: 1px black solid;
+    border-radius: 16px;
+    background-color: #f4f4f4;
+}
+
+.menuForm {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.menuForm input[type="submit"]{
+    padding: 8px 16px;
+    border-radius: 8px;
+    background-color: #5603AD;
+}
