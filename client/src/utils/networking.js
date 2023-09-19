@@ -1,6 +1,6 @@
 import { io } from "socket.io-client";
-import { updateLeaderboard } from "../redux/actions/leaderboard-action";
-import { UPDATE_LEADERBOARD } from "../redux/constants/leaderboard-types";
+import { updateGameState } from "../redux/actions/gameState-action";
+
 import store from "../redux/store";
 
 const socket = io(":5000");
@@ -24,7 +24,7 @@ export const connect = (onGameOver) =>
 
     socket.on("game-update", (gameState) => {
       
-      store.dispatch({type:UPDATE_LEADERBOARD, gameState: gameState})
+      store.dispatch(updateGameState(gameState))
         // store.dispatch(updateLeaderboard(gameState));
     })
   });

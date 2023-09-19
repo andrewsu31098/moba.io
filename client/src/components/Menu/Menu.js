@@ -11,9 +11,6 @@ export default function Menu(){
         dispatch(toggleMenuState())
         e.preventDefault()
     }
-    useEffect(()=>{
-        console.log(menuState)
-    },[menuState, dispatch])
 
     return (
       <div>

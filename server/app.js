@@ -1,6 +1,9 @@
 import express from "express";
 import { createServer } from "http";
 import { Server } from "socket.io";
+import {gameState, addPlayer, randomMovement} from "./state.js";
+
+
 
 const app = express();
 const port = 5000;
@@ -12,22 +15,19 @@ const io = new Server(httpServer, {
 });
 
 io.on("connection", (socket) => {
-  console.log(socket.id);
-  gameState.push(socket.id);
+  console.log(gameState);
+  addPlayer(socket.id);
 
   socket.on("disconnect", () => {
     console.log("user disconnected");
-    gameState = gameState.filter((id) => id != socket.id);
+    let indexRemove = gameState.players.find((player)=>player.id==socket.id);
+    if (indexRemove != -1)
+      gameState.players.splice(indexRemove, 1);
   });
 });
 
-
-
-
-// Maintain a gamestate
-let gameState = []
-
 setInterval(() => {
+  randomMovement();
   io.emit("game-update", gameState);
 }, 50);
 
