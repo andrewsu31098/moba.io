@@ -13,7 +13,7 @@ export default function Menu(){
     }
 
     return (
-      <div>
+      <div style={{position: "absolute", width:"100%"}}>
         {menuState && (
           <div className={styles.menuContainer}>
             <div className={styles.menuScreen}>

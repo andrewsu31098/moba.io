@@ -23,10 +23,11 @@ export const connect = (onGameOver) =>
     });
 
     socket.on("game-update", (gameState) => {
-      
       store.dispatch(updateGameState(gameState))
-        // store.dispatch(updateLeaderboard(gameState));
     })
   });
 
+export const updateDirection = (dir) => {
+  socket.emit("update-direction", dir)
+}
 

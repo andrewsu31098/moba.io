@@ -1,0 +1,2 @@
+
+export const DIRECTIONS = {NONE:"NONE", UP: "UP", DOWN: "DOWN", LEFT:"LEFT", RIGHT:"RIGHT"}

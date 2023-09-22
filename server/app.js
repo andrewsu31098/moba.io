@@ -1,7 +1,7 @@
 import express from "express";
 import { createServer } from "http";
 import { Server } from "socket.io";
-import {gameState, addPlayer, randomMovement} from "./state.js";
+import {gameState, addPlayer, updatePosition, updateDirection} from "./state.js";
 
 
 
@@ -24,10 +24,15 @@ io.on("connection", (socket) => {
     if (indexRemove != -1)
       gameState.players.splice(indexRemove, 1);
   });
+
+  socket.on("update-direction", (dir)=>{
+    let activePlayer = gameState.players.find((player)=>player.id==socket.id)
+    updateDirection(activePlayer, dir);
+  })
 });
 
 setInterval(() => {
-  randomMovement();
+  updatePosition();
   io.emit("game-update", gameState);
 }, 50);
 
