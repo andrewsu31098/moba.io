@@ -27,8 +27,7 @@ io.on("connection", (socket) => {
 
   socket.on("update-direction", (dir)=>{
     let activePlayer = gameState.players.find((player)=>player.id==socket.id)
-    if (activePlayer)
-      updateDirection(activePlayer, dir);
+    updateDirection(activePlayer, dir);
   })
 });
 

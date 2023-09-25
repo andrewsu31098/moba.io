@@ -16,16 +16,16 @@ export let updatePosition = () => {
     gameState.players.forEach((player)=>{
         switch (player.dir) {
           case DIRECTIONS.UP:
-            player.pos.y -= 8;
+            player.pos.y -= 1;
             break;
           case DIRECTIONS.DOWN:
-            player.pos.y += 8;
+            player.pos.y += 1;
             break;
           case DIRECTIONS.LEFT:
-            player.pos.x -= 8;
+            player.pos.x -= 1;
             break;
           case DIRECTIONS.RIGHT:
-            player.pos.x += 8;
+            player.pos.x += 1;
             break;
         }
     })

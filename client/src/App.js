@@ -8,7 +8,6 @@ import { useEffect } from "react";
 import Menu from "./components/Menu/Menu";
 import Leaderboard from "./components/Leaderboard/Leaderboard";
 import GameView from "./components/GameView/GameView";
-import PhaserGame from "./components/PhaserGame/PhaserGame";
 
 import handleInput from "./controllers/handleInput";
 
@@ -21,8 +20,7 @@ function App() {
     <Provider store={store}>
       <div>
         <Menu />
-        {/* <GameView/> */}
-        <PhaserGame />
+        <GameView />
         <Leaderboard />
       </div>
     </Provider>
