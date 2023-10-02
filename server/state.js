@@ -14,19 +14,22 @@ export const updateDirection = (player, direction) => {
 
 export let updatePosition = () => {
     gameState.players.forEach((player)=>{
-        switch (player.dir) {
-          case DIRECTIONS.UP:
-            player.pos.y -= 1;
-            break;
-          case DIRECTIONS.DOWN:
-            player.pos.y += 1;
-            break;
-          case DIRECTIONS.LEFT:
-            player.pos.x -= 1;
-            break;
-          case DIRECTIONS.RIGHT:
-            player.pos.x += 1;
-            break;
-        }
+
+        if (player.dir[DIRECTIONS.UP]) player.pos.y -= 5;
+        if (player.dir[DIRECTIONS.DOWN]) player.pos.y += 5;
+        if (player.dir[DIRECTIONS.LEFT]) player.pos.x -= 5;
+        if (player.dir[DIRECTIONS.RIGHT]) player.pos.x += 5;
+        // switch (player.dir) {
+        //   case DIRECTIONS.UP:
+        //     player.pos.y -= 5;
+        //   case DIRECTIONS.DOWN:
+        //     player.pos.y += 5;
+        //   case DIRECTIONS.LEFT:
+        //     player.pos.x -= 5;
+        //   case DIRECTIONS.RIGHT:
+        //     player.pos.x += 5;
+        //   default:
+        //     break;
+        // }
     })
 }

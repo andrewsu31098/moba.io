@@ -34,7 +34,7 @@ io.on("connection", (socket) => {
 setInterval(() => {
   updatePosition();
   io.emit("game-update", gameState);
-}, 50);
+}, 33);
 
 
 httpServer.listen(port);

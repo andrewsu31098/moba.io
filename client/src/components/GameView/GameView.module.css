@@ -1,0 +1,5 @@
+.GameView {
+    background: linear-gradient(130deg, black,gray, white);
+    width: 100%;
+    height: 100%;
+}

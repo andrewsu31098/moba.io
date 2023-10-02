@@ -52,7 +52,7 @@ export default function GameView() {
 
 
   return (
-    <div style={{width: "100%", height: "100%"}}>
+    <div className={styles.GameView}>
       <canvas ref={gameCanvas} width="500px" height="500px"></canvas>
     </div>
   );
